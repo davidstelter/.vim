@@ -1,0 +1,219 @@
+"The all important nocompatible
+set nocompatible
+"no beeping!
+set noeb vb t_vb=
+
+execute pathogen#infect()
+
+filetype plugin indent on
+
+" always show statusline
+set laststatus=2
+
+" mouse mode all
+set mouse=a
+
+" decent defaults for most stuff
+set tabstop=4 shiftwidth=4 softtabstop=4
+
+"Backspace clears out all sorts of crap.
+set backspace=indent,eol,start
+
+set lazyredraw
+
+"Show all sorts of good information
+set number
+set showmode
+set showcmd
+set ruler
+
+"Set up the wildmenu used for tab completing
+set wildchar=<Tab>
+set wildmenu
+set wildmode=longest,full
+set wildcharm=<C-Z>
+
+"Taglist shortcuts
+nnoremap <F9> :TlistToggle <Cr>
+
+"window-nav shortcuts
+nmap <c-h> <c-w>h
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
+
+"Searching options
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+"Make the text look all purrty
+if has("syntax")
+    if &term =~ "xterm" || &term =~ "rxvt" || has("gui_running")
+        set t_Co=256
+        "color inkpot
+        "let g:inkpot_black_background = 1
+		"color xoria256
+		color jellybeans " current favorite
+    endif
+syntax on
+endif
+
+if has("gui_running")
+	set guifont=Terminus\ 10
+endif
+
+"Autocommand goodness (still slightly beta :) ).
+if has ("autocmd")
+    augroup haskell
+        autocmd FileType hs
+                    \ set ts=4 sw=4 softtabstop=4
+        autocmd FileType hs
+                    \ set expandtab
+    augroup END
+    "Autocommands to set up tab widths and autoindentions for c, c++ and java
+    augroup C_code
+        autocmd FileType c,cpp,java
+                     \ set tabstop=4 shiftwidth=4 softtabstop=4
+        autocmd FileType c,cpp,java
+                     \ set cindent
+    augroup END
+
+    "Autocommands to set the all important tab width for ruby. Also begins
+    "new ruby files with the bang and saves it as executable.
+    augroup ruby
+        autocmd BufNewFile *.rb 0put ='#!/usr/bin/env ruby'
+        autocmd FileType ruby,pp
+                     \ set tabstop=4 shiftwidth=4 softtabstop=4
+        autocmd FileType ruby
+                     \ set smartindent
+        "autocmd BufWritePost *.rb !chmod 744 %
+    augroup END
+
+    "Shell stuff sets autoindention details, the bang line, and saves the
+    "file as an executable.
+    augroup shell
+        autocmd BufNewFile *.sh 0put ='#!/bin/sh'
+        autocmd FileType sh
+                     \ set tabstop=4 shiftwidth=4 softtabstop=4
+        autocmd FileType sh
+                     \ set smartindent
+        "autocmd BufWritePost *.sh !chmod 744 % " set perms on write... meh...
+    augroup END
+
+	augroup xml
+		autocmd FileType xml
+					\ set fdm=indent fdc=2 ts=2 sw=2 softtabstop=2
+	augroup END
+
+	augroup sql
+		autocmd FileType sql set expandtab
+		autocmd FileType sql set tabstop=2 shiftwidth=2 softtabstop=2
+		autocmd FileType sql set filetype=mysql " usually a good bet
+	augroup END
+
+	augroup php
+		"autocmd FileType php let php_folding=1
+		autocmd FileType php set noexpandtab
+		autocmd FileType php set smartindent
+		"autocmd FileType php set foldenable
+		"autocmd FileType php set foldmethod=indent
+		autocmd FileType php set tabstop=4 shiftwidth=4 softtabstop=4
+	augroup END
+
+	augroup yaml
+		autocmd FileType yaml set expandtab
+		autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
+	augroup END
+
+	" make writing freeform text a little more comfortable
+	augroup txt
+		autocmd FileType txt set formatoptions=l
+		autocmd FileType txt set lbr
+		autocmd FileType txt set tw=100
+		autocmd FileType txt nnoremap j gj
+		autocmd FileType txt nnoremap k gk
+		autocmd FileType txt nnoremap 0 g0
+		autocmd FileType txt nnoremap $ g$
+		autocmd FileType txt set smartindent
+		autocmd FileType txt set spell spelllang=en_us
+	augroup END
+
+	" commit messages should be spelled right
+	augroup gitcommit
+		autocmd FileType gitcommit set spell spelllang=en_us
+	augroup END
+
+endif
+
+" JSON is a subset of JavaScript, sooo why isn't this built in?
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
+autocmd BufRead *\.txt set formatoptions=l
+autocmd BufRead *\.txt set lbr
+autocmd BufRead *\.txt set tw=100
+autocmd BufRead *\.txt nnoremap j gj
+autocmd BufRead *\.txt nnoremap k gk
+autocmd BufRead *\.txt nnoremap 0 g0
+autocmd BufRead *\.txt nnoremap $ g$
+autocmd BufRead *\.txt set smartindent
+autocmd BufRead *\.txt set spell spelllang=en_us
+
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
+
+" use XML compat tags in HTML for xml.vim
+let xml_use_xhtml = 1
+
+"completion with docs!
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+"extra whitespace detection
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+hi OverLength ctermbg=red ctermfg=white
+match OverLength /\%>101v.\+/
+hi ColorColumn ctermbg=233
+set colorcolumn=101
+
+"persistent undo history
+set undofile
+set undodir=/tmp
+
+set listchars=tab:⋅\ ,extends:\\
+
+" airline config
+"let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'jellybeans'
+let g:airline_enable_branch =1
+let g:airline_enable_syntastic = 1
+let g:airline_powerline_fonts = 1
+" vim-powerline symbols
+" let g:airline_left_sep          = '⮀'
+" let g:airline_left_alt_sep      = '⮁'
+" let g:airline_right_sep         = '⮂'
+" let g:airline_right_alt_sep     = '⮃'
+" let g:airline_branch_prefix     = '⭠'
+" let g:airline_readonly_symbol   = '⭤'
+" let g:airline_linecolumn_prefix = '⭡'
+
+let g:airline#extensions#tabline#enabled = 1
+
+if has('clipboard')
+	set clipboard=unnamed
+	"if has('xterm_clipboard')
+	"	setclipboard+=
+endif
