@@ -217,3 +217,5 @@ if has('clipboard')
 	"if has('xterm_clipboard')
 	"	setclipboard+=
 endif
+
+let g:nerdtree_tabs_open_on_console_startup=1
