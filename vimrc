@@ -19,6 +19,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4
 "Backspace clears out all sorts of crap.
 set backspace=indent,eol,start
 
+" uh, here for vsplit performance? I think?
 set lazyredraw
 
 "Show all sorts of good information
@@ -122,6 +123,9 @@ if has ("autocmd")
 		autocmd FileType php set tabstop=4 shiftwidth=4 softtabstop=4
 	augroup END
 
+	" Who the hell comes up with whitespace-sensitive languages/markup?
+	" This should really be handled by vim - this is probably here as
+	" an override to other manual settings...
 	augroup yaml
 		autocmd FileType yaml set expandtab
 		autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
@@ -144,7 +148,6 @@ if has ("autocmd")
 	augroup gitcommit
 		autocmd FileType gitcommit set spell spelllang=en_us
 	augroup END
-
 endif
 
 " JSON is a subset of JavaScript, sooo why isn't this built in?
@@ -184,6 +187,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+" nice vertical line to show when I'm getting a little too long-winded.
 hi OverLength ctermbg=red ctermfg=white
 match OverLength /\%>101v.\+/
 hi ColorColumn ctermbg=233
@@ -196,20 +200,12 @@ set undodir=/tmp
 set listchars=tab:⋅\ ,extends:\\
 
 " airline config
-"let g:airline_theme = 'powerlineish'
-let g:airline_theme = 'jellybeans'
-let g:airline_enable_branch =1
+"let g:airline_theme = 'powerlineish' " bright, garish...
+"let g:airline_theme = 'jellybeans' " has a dark red I don't love...
+let g:airline_theme = 'base16' " happy toy colors!
+let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
-" vim-powerline symbols
-" let g:airline_left_sep          = '⮀'
-" let g:airline_left_alt_sep      = '⮁'
-" let g:airline_right_sep         = '⮂'
-" let g:airline_right_alt_sep     = '⮃'
-" let g:airline_branch_prefix     = '⭠'
-" let g:airline_readonly_symbol   = '⭤'
-" let g:airline_linecolumn_prefix = '⭡'
-
 let g:airline#extensions#tabline#enabled = 1
 
 if has('clipboard')
