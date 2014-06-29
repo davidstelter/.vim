@@ -2,6 +2,12 @@
 My vim config. Some of the autocommand goodies and basics came from a .vimrc which was passed around cs.pdx.edu, I
 can't remember who it originally came from. The submodules in the bundle dir are loaded with tpope's [vim-pathogen](https://github.com/tpope/vim-pathogen).
 
+If your vim is new enough it will use the .vim/vimrc file, but if it's a little older you'll need to help it out with a symlink which can be created like so:
+
+```bash
+ln -s ~/.vim/vimrc ~/.vimrc
+```
+
 My current favorite colorscheme is [jellybeans](https://github.com/nanotech/jellybeans.vim), though sometimes I favor [inkpot](https://github.com/ciaranm/inkpot). Both are included.
 
 The [vim-airline](https://github.com/bling/vim-airline) setup benefits from use of the [powerline](https://github.com/Lokaltog/powerline) font with special characters. Good luck if you're using xterm, I actually switched to terminator just for the joy of the silly arrows. I couldn't get it to work using uxterm with either the patched fonts and the docs say the standalone glyphs need fontconfig in a way that xterm doesn't handle.
