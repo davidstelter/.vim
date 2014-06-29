@@ -28,3 +28,9 @@
 [submodule "bundle/vim-nerdtree-tabs"]
 	path = bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "bundle/vim-characterize"]
+	path = bundle/vim-characterize
+	url = https://github.com/tpope/vim-characterize.git
+[submodule "bundle/vim-speeddating"]
+	path = bundle/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
