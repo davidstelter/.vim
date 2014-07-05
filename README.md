@@ -10,7 +10,9 @@ ln -s ~/.vim/vimrc ~/.vimrc
 
 My current favorite colorscheme is [jellybeans](https://github.com/nanotech/jellybeans.vim), though sometimes I favor [inkpot](https://github.com/ciaranm/inkpot). Both are included.
 
-The [vim-airline](https://github.com/bling/vim-airline) setup benefits from use of the [powerline](https://github.com/Lokaltog/powerline) font with special characters. Good luck if you're using xterm, I actually switched to terminator just for the joy of the silly arrows. I couldn't get it to work using uxterm with either the patched fonts and the docs say the standalone glyphs need fontconfig in a way that xterm doesn't handle.
+The [vim-airline](https://github.com/bling/vim-airline) setup benefits from use of the [powerline](https://github.com/Lokaltog/powerline) font with special characters.
+I found a short writeup that got the cute arrow symbols working in urxvt here: http://makandracards.com/jan0sch/18283-enable-powerline-fonts-with-rxvt-unicode-and-vim-airline
+The docs say the standalone glyphs need fontconfig in a way that xterm doesn't handle.
 
 There's also [nerdtree](https://github.com/scrooloose/nerdtree) for nice filetree browsing, and the excellent addon [vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) which keeps the tree consistent across multiple tabs.
 
