@@ -49,9 +49,11 @@ set incsearch
 set ignorecase
 set smartcase
 
+set background=dark
+
 "Make the text look all purrty
 if has("syntax")
-    if &term =~ "xterm" || &term =~ "rxvt" || has("gui_running")
+    if &term =~ "xterm" || &term =~ "rxvt" || has("gui_running") || &term =~ "st-256color"
         set t_Co=256
         "color inkpot
         "let g:inkpot_black_background = 1
@@ -205,8 +207,12 @@ set listchars=tab:⋅\ ,extends:\\
 let g:airline_theme = 'base16' " happy toy colors!
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+if &term =~ "rxvt" || has("gui_running")
+	let g:airline_powerline_fonts = 1
+endif
 
 if has('clipboard')
 	set clipboard=unnamed
