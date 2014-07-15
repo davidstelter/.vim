@@ -34,3 +34,6 @@
 [submodule "bundle/vim-speeddating"]
 	path = bundle/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+[submodule "bundle/wake.vim"]
+	path = bundle/wake.vim
+	url = git@github.com:davidstelter/wake.vim.git
