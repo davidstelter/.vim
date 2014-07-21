@@ -20,9 +20,9 @@ For urxvt to use the Terminess Powerline font, the following is needed in your `
 URxvt*font: xft:Terminess Powerline:size=9
 ```
 
-There's also [nerdtree](https://github.com/scrooloose/nerdtree) for nice filetree browsing, and the excellent addon [vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) which keeps the tree consistent across multiple tabs.
-
+[nerdtree](https://github.com/scrooloose/nerdtree) for nice filetree browsing, and the excellent addon [vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) which keeps the tree consistent across multiple tabs.
 [vim-signify](https://github.com/mhinz/vim-signify) is also wonderful, one of those things you don't know you need until you have it and then can't live without. It simply inserts signs for an unobtrusive indicator of edit status.
+[phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim) adds wonderful function completion and other niceties.
 
 ## tpope
 I've got more than just pathogen from [tpope](https://github.com/tpope), specifically:

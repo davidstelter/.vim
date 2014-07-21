@@ -37,3 +37,6 @@
 [submodule "bundle/wake.vim"]
 	path = bundle/wake.vim
 	url = git@github.com:davidstelter/wake.vim.git
+[submodule "bundle/phpcomplete.vim"]
+	path = bundle/phpcomplete.vim
+	url = https://github.com/shawncplus/phpcomplete.vim.git
