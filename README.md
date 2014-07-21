@@ -20,13 +20,14 @@ For urxvt to use the Terminess Powerline font, the following is needed in your `
 URxvt*font: xft:Terminess Powerline:size=9
 ```
 
-[nerdtree](https://github.com/scrooloose/nerdtree) for nice filetree browsing, and the excellent addon [vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) which keeps the tree consistent across multiple tabs.
-[vim-signify](https://github.com/mhinz/vim-signify) is also wonderful, one of those things you don't know you need until you have it and then can't live without. It simply inserts signs for an unobtrusive indicator of edit status.
-[phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim) adds wonderful function completion and other niceties.
-
 ## tpope
 I've got more than just pathogen from [tpope](https://github.com/tpope), specifically:
 * [vim-fugitive](https://github.com/tpope/vim-fugitive), which replaced some of my own hacky attempts at vimscript with similar functionality.
 * [vim-surround](https://github.com/tpope/vim-surround) which makes text editing simply better, it should really just be part of vim's main-line codebase.
 * [vim-characterize](https://github.com/tpope/vim-characterize) shows character codes, escape sequences, descriptions, etc.
 * [vim-speeddating](https://github.com/tpope/vim-speeddating.git) adds date/time handling to `<c-a>/<c-x>`, the wonderful increment/decrement operations.
+
+## assorted plugins
+* [nerdtree](https://github.com/scrooloose/nerdtree) for nice filetree browsing, and the excellent addon [vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) which keeps the tree consistent across multiple tabs.
+* [vim-signify](https://github.com/mhinz/vim-signify) is also wonderful, one of those things you don't know you need until you have it and then can't live without. It simply inserts signs for an unobtrusive indicator of edit status.
+* [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim) adds wonderful function completion and other niceties.
