@@ -14,6 +14,12 @@ The [vim-airline](https://github.com/bling/vim-airline) setup benefits from use 
 I found a short writeup that got the cute arrow symbols working in urxvt here: http://makandracards.com/jan0sch/18283-enable-powerline-fonts-with-rxvt-unicode-and-vim-airline
 The docs say the standalone glyphs need fontconfig in a way that xterm doesn't handle.
 
+For urxvt to use the Terminess Powerline font, the following is needed in your `~/.Xresources` or other xrdb sourced file:
+
+````
+URxvt*font: xft:Terminess Powerline:size=9
+```
+
 There's also [nerdtree](https://github.com/scrooloose/nerdtree) for nice filetree browsing, and the excellent addon [vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs) which keeps the tree consistent across multiple tabs.
 
 [vim-signify](https://github.com/mhinz/vim-signify) is also wonderful, one of those things you don't know you need until you have it and then can't live without. It simply inserts signs for an unobtrusive indicator of edit status.
