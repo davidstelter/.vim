@@ -107,7 +107,8 @@ if has ("autocmd")
 
 	augroup xml
 		autocmd FileType xml
-					\ set fdm=indent fdc=2 ts=2 sw=2 softtabstop=2
+					"\ set fdm=indent fdc=2 ts=2 sw=2 softtabstop=2
+					\ set ts=2 sw=2 softtabstop=2
 	augroup END
 
 	augroup sql
@@ -221,3 +222,8 @@ if has('clipboard')
 endif
 
 let g:nerdtree_tabs_open_on_console_startup=1
+
+let g:syntastic_phpcs_disable = 1
+let g:syntastic_phpmd_disable = 1
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_quiet_messages = { "type": "style" }
