@@ -107,8 +107,8 @@ if has ("autocmd")
 
 	augroup xml
 		autocmd FileType xml
-					"\ set fdm=indent fdc=2 ts=2 sw=2 softtabstop=2
 					\ set ts=2 sw=2 softtabstop=2
+					"\ set fdm=indent fdc=2 ts=2 sw=2 softtabstop=2
 	augroup END
 
 	augroup sql
