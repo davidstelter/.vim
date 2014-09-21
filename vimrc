@@ -226,3 +226,5 @@ let g:nerdtree_tabs_open_on_console_startup=1
 " phpcomplete settings
 let g:phpcomplete_parse_docblock_comments = 1
 let g:phpcomplete_cache_taglists = 1
+
+au BufRead,BufNewFile *.html.eex set filetype=html
