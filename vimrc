@@ -228,3 +228,8 @@ let g:phpcomplete_parse_docblock_comments = 1
 let g:phpcomplete_cache_taglists = 1
 
 au BufRead,BufNewFile *.html.eex set filetype=html
+
+let g:syntastic_phpcs_disable = 1
+let g:syntastic_phpmd_disable = 1
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_quiet_messages = { "type": "style" }
