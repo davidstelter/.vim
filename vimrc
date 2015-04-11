@@ -34,8 +34,11 @@ set wildmenu
 set wildmode=longest,full
 set wildcharm=<C-Z>
 
+"Command-T ignore stuff
+set wildignore+=*.class,.git,.hg,.svn,target/**
+
 "Taglist shortcuts
-nnoremap <F9> :TlistToggle <Cr>
+"nnoremap <F9> :TlistToggle <Cr>
 
 "window-nav shortcuts
 nmap <c-h> <c-w>h
